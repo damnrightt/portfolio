@@ -9,7 +9,14 @@ Bu proje,  AI yardımıyla interaktif bir şekilde geliştirilmiştir. Sade ve �
 
 - **Modern ve Minimalist Tasarım:** Kullanıcı deneyimini ön planda tutan, sade ve odaklanmış bir arayüz.
 - **Glassmorphism Efektleri:** Derinlik hissi veren modern cam efektli UI bileşenleri.
+- **IP Tabanlı Otomatik Dil Algılama:** Kullanıcının IP adresine göre otomatik olarak Türkçe/İngilizce dil seçimi.
 - **Akıcı Animasyonlar:** Sayfa genelinde ve fare imlecinde kullanılan pürüzsüz ve tatmin edici animasyonlar.
+- **Özel Cursor Takipçisi:** Varsayılan mouse cursor'ı gizlenmiş, özel takipçi cursor sistemi.
+- **Typewriter Efekti:** Hero bölümünde dinamik yazma animasyonu ile profesyonel görünüm.
+- **Interaktif Parçacık Sistemi:** Mouse hareketlerine duyarlı parçacık animasyonları.
+- **Animasyonlu Skill Bars:** Yetenekler bölümünde scroll ile tetiklenen progress bar animasyonları.
+- **Modern Loading Screen:** IP algılaması ile birlikte çalışan estetik yükleme ekranı.
+- **Yağmur Efekti:** Arka planda sürekli çalışan atmosferik yağmur animasyonu.
 - **Dinamik Proje Listesi:** GitHub API'si kullanılarak kullanıcının en güncel projelerini otomatik olarak çeker ve listeler.
 - **Tema Desteği:** Açık ve Koyu mod arasında geçiş yapma imkanı.
 - **Arka Plan Müziği:** Siteye giriş yapıldığında başlayan, ambiyans yaratan arka plan müziği.
@@ -19,9 +26,15 @@ Bu proje,  AI yardımıyla interaktif bir şekilde geliştirilmiştir. Sade ve �
 
 Bu proje, herhangi bir framework veya kütüphane bağımlılığı olmadan, tamamen temel web teknolojileri kullanılarak oluşturulmuştur:
 
-- **HTML5:** İçeriğin anlamsal yapısı için.
-- **CSS3:** Tasarım, animasyonlar ve modern layout (Flexbox) için.
-- **JavaScript (ES6+):** Fonksiyonellik, API entegrasyonu ve interaktif elementler için.
+- **HTML5:** İçeriğin anlamsal yapısı ve çok dilli destek için.
+- **CSS3:** Modern tasarım, glassmorphism efektleri, animasyonlar ve responsive layout için.
+- **JavaScript (ES6+):** Async/await, Canvas API, Intersection Observer ve çeşitli web API'leri kullanımı.
+- **External APIs:**
+  - **ipify.org:** IP adresi tespiti için
+  - **ip-api.com:** Coğrafi konum ve ülke kodu algılama için
+  - **GitHub API:** Dinamik proje listesi için
+  - **Font Awesome:** Icon setleri için
+  - **Google Fonts:** Sora font ailesi için
 
 ## 🚀 Kurulum ve Kullanım
 
@@ -29,7 +42,7 @@ Projeyi yerel makinenizde çalıştırmak için:
 
 1.  Bu repoyu klonlayın:
     ```bash
-    git clone https://github.com/kellebyte/portfolio.git
+    git clone https://github.com/damnrightt/portfolio.git
     ```
 2.  Proje dizinine gidin:
     ```bash
@@ -43,10 +56,24 @@ Hepsi bu kadar! Herhangi bir derleme veya kurulum adımı gerekmemektedir.
 
 Portfolyoyu kendinize göre özelleştirmek isterseniz aşağıdaki dosyalarda değişiklik yapabilirsiniz:
 
-- **`index.html`:** Metin içeriklerini (Hakkımda, Yetenekler vb.), sosyal medya linklerini ve temel yapıyı değiştirmek için bu dosyayı düzenleyin.
-- **`style.css`:** Renk paletini, fontları, boşlukları veya animasyonları değiştirmek için bu dosyayı düzenleyin. Renkler `:root` bloğunda değişken olarak tanımlanmıştır ve kolayca değiştirilebilir.
-- **`script.js`:** GitHub API'sinden çekilecek kullanıcı adını (`githubUsername` değişkeni) veya arka plan müziğinin ses seviyesini (`backgroundMusic.volume`) değiştirmek için bu dosyayı düzenleyin.
+- **`index.html`:** 
+  - Kişisel bilgilerinizi (`data-i18n` attribute'lı elementlerde) güncelleyin
+  - Sosyal medya linklerinizi değiştirin
+  - Skill seviyeleri ve teknolojileri düzenleyin
+
+- **`style.css`:** 
+  - Renk paletini `:root` bloğundaki CSS değişkenlerinden değiştirin
+  - Animasyon sürelerini ve efektleri özelleştirin
+  - Parçacık ve yağmur efekti görsellerini ayarlayın
+
+- **`script.js`:** 
+  - GitHub kullanıcı adınızı `fetchProjects()` fonksiyonunda değiştirin
+  - `translations` objesinde Türkçe/İngilizce çevirileri güncelleyin
+  - Typewriter efektindeki metinleri düzenleyin
+  - Skill seviyelerini ve yetenek listesini özelleştirin
+
 - **`1.mp3`:** Arka plan müziğini değiştirmek için bu dosyayı kendi müzik dosyanızla değiştirin.
+- **`background.jpg`:** Arka plan görselini özelleştirin.
 
 ## 🤝 Katkıda Bulunma
 
