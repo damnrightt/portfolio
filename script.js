@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entryOverlay.addEventListener('click', () => {
         entryOverlay.style.opacity = '0';
         setTimeout(() => entryOverlay.style.display = 'none', 800);
+        backgroundMusic.volume = 0.3;
         backgroundMusic.play().then(() => {
             musicPlaying = true;
         }).catch(() => {});
