@@ -2,7 +2,7 @@
 
 Bu proje,  AI yardımıyla interaktif bir şekilde geliştirilmiştir. Sade ve şık bir tasarım felsefesiyle, geliştiricinin yeteneklerini ve projelerini en etkili şekilde sunmayı hedefler.
 
-![Portfolyo Ekran Görüntüsü](https://i.imgur.com/FqzjMwd.png)  
+![SS]([https://i.imgur.com/FqzjMwd.png](https://i.imgur.com/uFwo0IT.png))  
 
 
 ## ✨ Özellikler
