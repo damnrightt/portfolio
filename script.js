@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. GitHub Projelerini Çekme
     async function fetchProjects() {
         try {
-            const response = await fetch('https://api.github.com/users/kellebyte/repos?sort=updated&direction=desc');
+            const response = await fetch('https://api.github.com/users/damnrightt/repos?sort=updated&direction=desc');
             if (!response.ok) throw new Error('API yanıt vermiyor');
             const repos = await response.json();
             
