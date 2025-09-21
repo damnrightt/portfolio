@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✦ damn right | AI Developer</title>
+    <title data-i18n="pageTitle">✦ damn right | AI Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,37 @@
 <body class="dark-mode">
 
     <div id="entry-overlay">
-        <p>Giriş için tıklayın</p>
+        <p data-i18n="entryClick">Giriş için tıklayın</p>
     </div>
 
     <div id="cursor-follower"></div>
+    
+    
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">✦</div>
+            <div class="loading-text">damn right</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-ip-notice" id="loading-ip-notice">
+                IP adresiniz otomatik çeviri için kullanılacaktır.
+            </div>
+        </div>
+    </div>
+
+    <canvas id="rainCanvas"></canvas>
+    <canvas id="particleCanvas"></canvas>
 
     <audio id="background-music" src="1.mp3" loop></audio>
 
     <header>
         <nav>
             <div class="logo">✦</div>
+            <div class="lang-switcher">
+                <span class="lang-option active" data-lang="tr">TR</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <button id="theme-toggle" aria-label="Toggle theme">
                 <i class="fas fa-sun"></i>
             </button>
@@ -31,55 +52,89 @@
 
     <main>
         <section id="hero">
-            <img src="https://cdn.discordapp.com/avatars/1386443693401309256/8febfd857dad28cc37c2d247f0764368.webp?size=1024" alt="Profil Resmi" class="hero-img scroll-reveal">
-            <h1 class="scroll-reveal" data-delay="0.1s">✦ damn right</h1>
-            <p class="subtitle scroll-reveal" data-delay="0.2s">AI Developer / Coder</p>
-            <p class="location-info scroll-reveal" data-delay="0.3s">
-                <i class="fas fa-map-marker-alt"></i> Turkey / Turkiye
-            </p>
+            <div class="content-panel">
+                <img src="https://cdn.discordapp.com/avatars/1386443693401309256/8febfd857dad28cc37c2d247f0764368.webp?size=1024" alt="Profil Resmi" class="hero-img scroll-reveal">
+                <h1 class="scroll-reveal" data-delay="0.1s" data-i18n="heroTitle">✦ damn right</h1>
+                <p class="subtitle scroll-reveal" data-delay="0.2s">
+                    <span id="typed-text"></span>
+                    <span class="typing-cursor">|</span>
+                </p>
+                <p class="location-info scroll-reveal" data-delay="0.3s">
+                    <i class="fas fa-map-marker-alt"></i> <span data-i18n="heroLocation">Turkey / Turkiye</span>
+                </p>
+            </div>
         </section>
 
         <section id="about" class="scroll-reveal">
-            <h2>Hakkımda</h2>
+            <h2 data-i18n="aboutTitle">Hakkımda</h2>
             <div class="content-panel">
-                <p>AI ile birlikte çoğu projenin altından kalkabilirim.</p>
+                <p data-i18n="aboutContent">Yapay zeka destekli bir geliştirici olarak, karmaşık projelerin üstesinden gelmek ve yenilikçi çözümler üretmek için buradayım.</p>
             </div>
         </section>
 
         <section id="skills" class="scroll-reveal">
-            <h2>Yetenekler</h2>
+            <h2 data-i18n="skillsTitle">Yetenekler</h2>
             <div class="content-panel">
-                <div class="tag-container">
-                    <span>C#</span>
-                    <span>C++</span>
-                    <span>PHP</span>
-                    <span>Node.js</span>
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">C#</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PHP</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">C++</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="95"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="languages" class="scroll-reveal">
-            <h2>Diller</h2>
+            <h2 data-i18n="languagesTitle">Diller</h2>
             <div class="content-panel">
                 <div class="tag-container">
-                    <span>Türkçe</span>
-                    <span>İngilizce (A2)</span>
+                    <span>Türkçe / Turkish</span>
+                    <span>İngilizce / English (A2)</span>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="scroll-reveal">
-            <h2>Projeler</h2>
+            <h2 data-i18n="projectsTitle">Projeler</h2>
             <div id="projects-container" class="projects-list">
                 <div class="spinner"></div>
             </div>
         </section>
 
         <section id="contact" class="scroll-reveal">
-            <h2>İletişim</h2>
+            <h2 data-i18n="contactTitle">İletişim</h2>
             <div class="content-panel">
                 <div class="social-links">
                     <a href="https://discord.com/users/1386443693401309256" target="_blank" aria-label="Discord">Discord</a>
@@ -89,8 +144,9 @@
         </section>
     </main>
 
+
     <footer>
-        <p>&copy; 2025 ✦ damn right</p>
+        <p data-i18n="footerText">&copy; 2025 ✦ damn right</p>
     </footer>
 
     <script src="script.js"></script>
