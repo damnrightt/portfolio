@@ -3,150 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">✦ damn right | AI Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>✦ damn right | AI Developer</title>
+    <meta name="description" content="AI Developer & Full Stack Programmer portfolio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
+<body>
 
-    <div id="entry-overlay">
-        <p data-i18n="entryClick">Giriş için tıklayın</p>
-    </div>
+    <!-- Background Elements -->
+    <div class="background-gradient"></div>
+    <div class="particles" id="particles"></div>
 
-    <div id="cursor-follower"></div>
-    
-    
-    <div id="loading-screen">
-        <div class="loading-container">
-            <div class="loading-logo">✦</div>
-            <div class="loading-text">damn right</div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-            <div class="loading-ip-notice" id="loading-ip-notice">
-                IP adresiniz otomatik çeviri için kullanılacaktır.
-            </div>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="glitch" data-text="damn right">damn right</div>
+            <div class="loader-bar"><div class="progress"></div></div>
         </div>
     </div>
 
-    <canvas id="rainCanvas"></canvas>
-    <canvas id="particleCanvas"></canvas>
+    <!-- Music Control -->
+    <div class="music-control">
+        <button id="music-toggle" aria-label="Toggle Music">
+            <i class="fas fa-play"></i>
+        </button>
+        <div class="visualizer">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <audio id="bg-music" src="1.mp3" loop></audio>
 
-    <audio id="background-music" src="1.mp3" loop></audio>
+    <!-- Language Switcher -->
+    <div class="lang-switch">
+        <button data-lang="tr" class="active">TR</button>
+        <button data-lang="en">EN</button>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">✦</div>
-            <div class="lang-switcher">
-                <span class="lang-option active" data-lang="tr">TR</span>
-                <span class="lang-option" data-lang="en">EN</span>
-            </div>
-            <button id="theme-toggle" aria-label="Toggle theme">
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-    </header>
+    <!-- Main Content -->
+    <main class="container">
 
-    <main>
-        <section id="hero">
-            <div class="content-panel">
-                <img src="https://cdn.discordapp.com/avatars/1386443693401309256/8febfd857dad28cc37c2d247f0764368.webp?size=1024" alt="Profil Resmi" class="hero-img scroll-reveal">
-                <h1 class="scroll-reveal" data-delay="0.1s" data-i18n="heroTitle">✦ damn right</h1>
-                <p class="subtitle scroll-reveal" data-delay="0.2s">
-                    <span id="typed-text"></span>
-                    <span class="typing-cursor">|</span>
-                </p>
-                <p class="location-info scroll-reveal" data-delay="0.3s">
-                    <i class="fas fa-map-marker-alt"></i> <span data-i18n="heroLocation">Turkey / Turkiye</span>
-                </p>
-            </div>
-        </section>
-
-        <section id="about" class="scroll-reveal">
-            <h2 data-i18n="aboutTitle">Hakkımda</h2>
-            <div class="content-panel">
-                <p data-i18n="aboutContent">Yapay zeka destekli bir geliştirici olarak, karmaşık projelerin üstesinden gelmek ve yenilikçi çözümler üretmek için buradayım.</p>
-            </div>
-        </section>
-
-        <section id="skills" class="scroll-reveal">
-            <h2 data-i18n="skillsTitle">Yetenekler</h2>
-            <div class="content-panel">
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <span class="skill-name">JavaScript</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-skill="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C#</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-skill="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Node.js</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-skill="80"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">PHP</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-skill="75"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C++</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-skill="70"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">HTML/CSS</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-skill="95"></div>
-                        </div>
+        <!-- Profile Card -->
+        <section class="profile-card glass">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img id="discord-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Profile">
+                    <div id="discord-status" class="status-indicator offline" title="Offline"></div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="glitch-small" data-text="damn right">damn right</h1>
+                    <p class="subtitle" data-i18n="heroSubtitle">AI Developer / Coder</p>
+                    <div class="badges">
+                        <span class="badge"><i class="fas fa-code"></i> Developer</span>
+                        <span class="badge"><i class="fas fa-robot"></i> AI Enthusiast</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="languages" class="scroll-reveal">
-            <h2 data-i18n="languagesTitle">Diller</h2>
-            <div class="content-panel">
-                <div class="tag-container">
-                    <span>Türkçe / Turkish</span>
-                    <span>İngilizce / English (A2)</span>
+            <!-- Lanyard Activity -->
+            <div id="discord-activity" class="activity-card hidden">
+                <div class="activity-icon">
+                    <img id="activity-image" src="" alt="Game">
+                </div>
+                <div class="activity-details">
+                    <span class="activity-header" data-i18n="playing">Oynuyor</span>
+                    <strong id="activity-name">Code</strong>
+                    <span id="activity-state">Editing file...</span>
+                    <span id="activity-time">00:00</span>
                 </div>
             </div>
-        </section>
 
-        <section id="projects" class="scroll-reveal">
-            <h2 data-i18n="projectsTitle">Projeler</h2>
-            <div id="projects-container" class="projects-list">
-                <div class="spinner"></div>
+            <!-- Navigation/Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="about" data-i18n="aboutTitle">Hakkımda</button>
+                <button class="tab-btn" data-tab="skills" data-i18n="skillsTitle">Yetenekler</button>
+                <button class="tab-btn" data-tab="projects" data-i18n="projectsTitle">Projeler</button>
             </div>
-        </section>
 
-        <section id="contact" class="scroll-reveal">
-            <h2 data-i18n="contactTitle">İletişim</h2>
-            <div class="content-panel">
+            <!-- Tab Content: About -->
+            <div class="tab-content active" id="about">
+                <p data-i18n="aboutContent">
+                    Yapay zeka destekli bir geliştirici olarak, karmaşık projelerin üstesinden gelmek ve yenilikçi çözümler üretmek için buradayım. Modern web teknolojileri ve AI entegrasyonları üzerine çalışıyorum.
+                </p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="location">Türkiye</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-language"></i>
+                        <span>TR / EN (A2)</span>
+                    </div>
+                </div>
+
                 <div class="social-links">
-                    <a href="https://discord.com/users/1386443693401309256" target="_blank" aria-label="Discord">Discord</a>
-                    <a href="https://github.com/damnrightt" target="_blank" aria-label="GitHub">GitHub</a>
+                    <a href="https://discord.com/users/1386443693401309256" target="_blank" class="social-btn discord">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                    <a href="https://github.com/damnrightt" target="_blank" class="social-btn github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
             </div>
+
+            <!-- Tab Content: Skills -->
+            <div class="tab-content" id="skills">
+                <div class="skills-wrapper">
+                    <div class="skill">
+                        <div class="skill-info"><span>JavaScript / Node.js</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info"><span>HTML / CSS</span><span>95%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info"><span>C#</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info"><span>PHP</span><span>75%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info"><span>C++</span><span>70%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 70%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Projects -->
+            <div class="tab-content" id="projects">
+                <div id="repos-container" class="repos-grid">
+                    <!-- Projects will be loaded here via JS -->
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
         </section>
     </main>
 
-
     <footer>
-        <p data-i18n="footerText">&copy; 2025 ✦ damn right</p>
+        <p>&copy; 2025 ✦ damn right</p>
     </footer>
 
     <script src="script.js"></script>
